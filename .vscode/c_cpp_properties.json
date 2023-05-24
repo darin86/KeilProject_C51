@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:\\software\\KeilC51\\C51\\INC"
+                "D:\\software\\KeilC51\\C51\\INC/**"
             ],
             "defines": [
                 "_DEBUG",
