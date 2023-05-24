@@ -1,0 +1,151 @@
+C51 COMPILER V9.54   MAIN                                                                  05/24/2023 21:51:12 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\software\KeilC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          
+   3          void Delay(unsigned int xms)    //@12.000MHz
+   4          {
+   5   1        unsigned char i, j;
+   6   1        while(xms--)
+   7   1        {
+   8   2          i = 2;
+   9   2          j = 239;
+  10   2          do
+  11   2          {
+  12   3            while (--j);
+  13   3          } while (--i);
+  14   2        }
+  15   1      }
+  16          
+  17          void main()
+  18          {
+  19   1        char key;
+  20   1        while(1)
+  21   1        {
+  22   2          while(1)
+  23   2          {
+  24   3            if(P3_1==0)
+  25   3            {
+  26   4              Delay(20);
+  27   4              while(P3_1==0);
+  28   4              Delay(20);
+  29   4              key=0;
+  30   4              break;
+  31   4            }
+  32   3            else if(P3_0==0)
+  33   3            {
+  34   4              Delay(20);
+  35   4              while(P3_0==0);
+  36   4              Delay(20);
+  37   4              key=1;  
+  38   4              break;
+  39   4            }
+  40   3            else if(P3_2==0)
+  41   3            {
+  42   4              Delay(20);
+  43   4              while(P3_2==0);
+  44   4              Delay(20);
+  45   4              key=2;  
+  46   4              break;
+  47   4            }
+  48   3            else if(P3_3==0)
+  49   3            {
+  50   4              Delay(20);
+  51   4              while(P3_3==0);
+  52   4              Delay(20);
+  53   4              key=3;  
+  54   4              break;
+C51 COMPILER V9.54   MAIN                                                                  05/24/2023 21:51:12 PAGE 2   
+
+  55   4            }
+  56   3          }
+  57   2          switch(key)
+  58   2          {
+  59   3            case 0:
+  60   3              while(1)
+  61   3              {
+  62   4                P2=0xFE;//1111 1110
+  63   4                Delay(500);
+  64   4                P2=0xFD;//1111 1101
+  65   4                Delay(500);
+  66   4                P2=0xFB;//1111 1011
+  67   4                Delay(500);
+  68   4                P2=0xF7;//1111 0111
+  69   4                Delay(500);
+  70   4                P2=0XEF;//1110 1111
+  71   4                Delay(500);
+  72   4                P2=0xDF;//1101 1111
+  73   4                Delay(500);
+  74   4                P2=0xBF;//1011 1111
+  75   4                Delay(500);
+  76   4                P2=0x7F;//0111 1111
+  77   4                Delay(500);
+  78   4              }
+  79   3          
+  80   3            case 1:
+  81   3              while(1)
+  82   3              {
+  83   4                P2=0xFE;//1111 1110
+  84   4                Delay(250);
+  85   4                P2=0xFD;//1111 1101
+  86   4                Delay(250);
+  87   4                P2=0xFB;//1111 1011
+  88   4                Delay(250);
+  89   4                P2=0xF7;//1111 0111
+  90   4                Delay(250);
+  91   4                P2=0XEF;//1110 1111
+  92   4                Delay(250);
+  93   4                P2=0xDF;//1101 1111
+  94   4                Delay(250);
+  95   4                P2=0xBF;//1011 1111
+  96   4                Delay(250);
+  97   4                P2=0x7F;//0111 1111
+  98   4                Delay(250);
+  99   4              }
+ 100   3        
+ 101   3            case 2:
+ 102   3              while(1)
+ 103   3              {
+ 104   4                P2=0xFE;
+ 105   4                Delay(100);
+ 106   4                P2=0xFD;
+ 107   4                Delay(100);
+ 108   4                P2=0xFB;
+ 109   4                Delay(100);
+ 110   4                P2=0xF7;
+ 111   4                Delay(100);
+ 112   4                P2=0XEF;
+ 113   4                Delay(100);
+ 114   4                P2=0xDF;
+ 115   4                Delay(100);
+ 116   4                P2=0xBF;
+C51 COMPILER V9.54   MAIN                                                                  05/24/2023 21:51:12 PAGE 3   
+
+ 117   4                Delay(100);
+ 118   4                P2=0x7F;
+ 119   4                Delay(100);
+ 120   4            }
+ 121   3          }
+ 122   2        }
+ 123   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    347    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
