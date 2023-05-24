@@ -14,7 +14,8 @@ void Delay(unsigned int xms)		//@12.000MHz
 	}
 }
 
-void main()
+void 
+main()
 {
 	char key;
 	while(1)
