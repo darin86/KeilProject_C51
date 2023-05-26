@@ -11,7 +11,6 @@ void main()
         Nixie(2,3);
         Nixie(3,1);
         Nixie(4,4);
-
     }
 }
 
