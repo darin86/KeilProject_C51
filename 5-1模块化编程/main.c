@@ -1,13 +1,18 @@
 #include <REGX52.H>
 #include "Delay.h"
+#include "Nixie.h"
  
 void main()
 {
 	while(1)
 	{
-		P2_6=1;
-		Delay(500);
-		P2_6=0;
-		Delay(500);
+		Nixie(1,2);
+		Delay(1);
+		Nixie(2,5);
+		Delay(1);
+		Nixie(3,0);
+		Delay(1);
+		Nixie(3,10);
+		Delay(1);
 	}
 }
