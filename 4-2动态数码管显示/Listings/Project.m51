@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        05/26/2023  12:40:40  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/26/2023  16:46:50  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   VALUE           TYPE          NAME
   ----------------------------------
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2023  12:40:40  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2023  16:46:50  PAGE 2
 
 
   -------         MODULE        MAIN
@@ -81,7 +81,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   C:00FFH         LINE#         11
   C:0106H         LINE#         12
   C:010DH         LINE#         13
-  C:0114H         LINE#         15
+  C:0114H         LINE#         14
   -------         ENDPROC       MAIN
   -------         PROC          _DELAY
   D:0006H         SYMBOL        xms
@@ -89,55 +89,55 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   D:0005H         SYMBOL        i
   D:0004H         SYMBOL        j
   -------         ENDDO         
+  C:0116H         LINE#         19
   C:0116H         LINE#         20
-  C:0116H         LINE#         21
-  C:0116H         LINE#         23
+  C:0116H         LINE#         22
+  C:0120H         LINE#         23
   C:0120H         LINE#         24
-  C:0120H         LINE#         25
-  C:0122H         LINE#         26
+  C:0122H         LINE#         25
+  C:0124H         LINE#         27
   C:0124H         LINE#         28
-  C:0124H         LINE#         29
-  C:0126H         LINE#         30
-  C:0128H         LINE#         31
-  C:012AH         LINE#         32
+  C:0126H         LINE#         29
+  C:0128H         LINE#         30
+  C:012AH         LINE#         31
   -------         ENDPROC       _DELAY
   -------         PROC          _NIXIE
   D:0007H         SYMBOL        Location
   D:0005H         SYMBOL        Number
+  C:008FH         LINE#         34
   C:008FH         LINE#         35
   C:008FH         LINE#         36
-  C:008FH         LINE#         37
+  C:00BCH         LINE#         37
   C:00BCH         LINE#         38
   C:00BCH         LINE#         39
-  C:00BCH         LINE#         40
-  C:00BEH         LINE#         41
+  C:00BEH         LINE#         40
+  C:00C0H         LINE#         41
   C:00C0H         LINE#         42
-  C:00C0H         LINE#         43
-  C:00C2H         LINE#         44
+  C:00C2H         LINE#         43
+  C:00C4H         LINE#         44
   C:00C4H         LINE#         45
-  C:00C4H         LINE#         46
-  C:00C6H         LINE#         47
+  C:00C6H         LINE#         46
+  C:00C8H         LINE#         47
   C:00C8H         LINE#         48
-  C:00C8H         LINE#         49
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2023  12:40:40  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/26/2023  16:46:50  PAGE 3
 
 
-  C:00CAH         LINE#         50
+  C:00CAH         LINE#         49
+  C:00CCH         LINE#         50
   C:00CCH         LINE#         51
-  C:00CCH         LINE#         52
-  C:00D2H         LINE#         53
+  C:00D2H         LINE#         52
+  C:00D4H         LINE#         53
   C:00D4H         LINE#         54
-  C:00D4H         LINE#         55
-  C:00DAH         LINE#         56
+  C:00DAH         LINE#         55
+  C:00DCH         LINE#         56
   C:00DCH         LINE#         57
-  C:00DCH         LINE#         58
-  C:00E2H         LINE#         59
+  C:00E2H         LINE#         58
+  C:00E4H         LINE#         59
   C:00E4H         LINE#         60
-  C:00E4H         LINE#         61
+  C:00EAH         LINE#         61
   C:00EAH         LINE#         62
   C:00EAH         LINE#         63
-  C:00EAH         LINE#         64
-  C:00F1H         LINE#         65
+  C:00F1H         LINE#         64
   -------         ENDPROC       _NIXIE
   -------         ENDMOD        MAIN
 
