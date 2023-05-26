@@ -10,5 +10,8 @@ void main()
 		Nixie(2,5);
 		Nixie(3,0);
 		Nixie(3,10);
+		Nixie(4,1);
+		Nixie(5,2);
+		
 	}
 }
