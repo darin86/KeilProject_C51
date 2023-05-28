@@ -1,6 +1,6 @@
-unsigned int changenum(unsigned int number)
+unsigned char changenum(unsigned char number)
 {
-	unsigned int ch=0;
+	unsigned char ch;
 	switch (number)
 	{
 	case 1:
@@ -42,6 +42,5 @@ unsigned int changenum(unsigned int number)
 	default:
 		break;
 	}
-
     return ch;
 }

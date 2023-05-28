@@ -7,7 +7,7 @@ unsigned char KeyNum;
 void main()
 {
     LCD_Init;
-    LCD_ShowString(1,1,'MARTIXKEY');
+    LCD_ShowString(1,1,"MARTIXKEY");
     while(1)
     {
         KeyNum=MatrixKey();

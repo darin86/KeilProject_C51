@@ -1,0 +1,72 @@
+C51 COMPILER V9.54   CHANGENUM                                                             05/28/2023 17:53:12 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE CHANGENUM
+OBJECT MODULE PLACED IN .\Objects\Changenum.obj
+COMPILER INVOKED BY: D:\software\KeilC51\C51\BIN\C51.EXE Changenum.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\Changenum.lst) TABS(2) OBJECT(.\Objects\Changenum.obj)
+
+line level    source
+
+   1          unsigned char changenum(unsigned char number)
+   2          {
+   3   1        unsigned char ch;
+   4   1        switch (number)
+   5   1        {
+   6   2        case 1:
+   7   2          ch=1;
+   8   2          break;
+   9   2        case 2:
+  10   2          ch=2;
+  11   2          break;
+  12   2        case 3:
+  13   2          ch=3;
+  14   2          break;
+  15   2        case 5:
+  16   2          ch=4;
+  17   2          break;
+  18   2        case 6:
+  19   2          ch=5;
+  20   2          break;
+  21   2        case 7:
+  22   2          ch=6;
+  23   2          break;
+  24   2        case 9:
+  25   2          ch=7;
+  26   2          break;
+  27   2        case 10:
+  28   2          ch=8;
+  29   2          break;
+  30   2        case 11:
+  31   2          ch=9;
+  32   2          break;
+  33   2          case 13://取消键
+  34   2              ch=11;
+  35   2              break;
+  36   2        case 14:
+  37   2          ch=10;
+  38   2          break;
+  39   2          case 15://确认键
+  40   2              ch=12;
+  41   2              break;
+  42   2        default:
+  43   2          break;
+  44   2        }
+  45   1          return ch;
+  46   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    115    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+C51 COMPILER V9.54   CHANGENUM                                                             05/28/2023 17:53:12 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -9,10 +9,12 @@ int count;
 void main()
 {
     LCD_Init;
-    LCD_ShowString(1,1,'PASSWORD');
+    LCD_ShowString(1,1,"PASSWORD");
     while(1)
-    {
-        KeyNum=Changenum(MatrixKey());
+    {	int z;
+		//z=MatrixKey();
+        //KeyNum=Changenum(z);
+		KeyNum=MatrixKey;
 		if(KeyNum<=10)
 		{
 			if(count<4)
@@ -27,12 +29,12 @@ void main()
 		{
 			if(password==1234)
 			{
-				LCD_ShowString(1,13,'OK ');
+				LCD_ShowString(1,13,"OK ");
 				while(1);
 			}
 			else
 			{
-				LCD_ShowString(1,13,'ERR');
+				LCD_ShowString(1,13,"ERR");
 				password=0;
 				count=0;
 				LCD_ShowNum(2,1,password,4);
