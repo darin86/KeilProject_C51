@@ -31,16 +31,14 @@ unsigned char changenum(unsigned char number)
 		ch=9;
 		break;
     case 13://取消键
-        ch=11;
+        ch=12;
         break;
 	case 14:
 		ch=10;
 		break;
     case 15://确认键
-        ch=12;
+        ch=11;
         break;
-	default:
-		break;
 	}
     return ch;
 }

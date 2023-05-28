@@ -230,7 +230,7 @@
               <RCB>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0xffff</Size>
               </RCB>
               <RXB>
                 <Type>0</Type>
@@ -399,14 +399,14 @@
               <FilePath>.\LCD1602.h</FilePath>
             </File>
             <File>
-              <FileName>MartrixKey.c</FileName>
+              <FileName>MatrixKey.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\MartrixKey.c</FilePath>
+              <FilePath>.\MatrixKey.c</FilePath>
             </File>
             <File>
-              <FileName>MartrixKey.h</FileName>
+              <FileName>MatrixKey.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\MartrixKey.h</FilePath>
+              <FilePath>.\MatrixKey.h</FilePath>
             </File>
           </Files>
         </Group>

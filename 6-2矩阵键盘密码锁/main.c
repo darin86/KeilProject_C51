@@ -4,7 +4,7 @@
 #include "MatrixKey.h"
 #include "Changenum.h"
 
-unsigned char KeyNum,Finalkey;
+unsigned char KeyNum;
 unsigned int Password,Count;
 
 void main()
@@ -13,41 +13,42 @@ void main()
 	LCD_ShowString(1,1,"Password:");
 	while(1)
 	{
-		KeyNum=MatrixKey();
-		Finalkey=changenum(KeyNum);
-		if(Finalkey)
+		KeyNum=changenum(MatrixKey());  //更改键盘布局后，9宫格
+		//KeyNum=MatrixKey();
+
+		if(KeyNum)
 		{
-			if(Finalkey<=10)	//按键按下，输入密码
+			if(KeyNum<=10)	//输入密码
 			{
 				if(Count<4)	//如果输入次数小于4
 				{
 					Password*=10;				//密码左移一位
-					Password+=Finalkey%10;		//获取一位密码
-					Count++;	//计次加一
+					Password+=KeyNum%10;		//获取一位密码
+					Count++;
 				}
 				LCD_ShowNum(2,1,Password,4);	//更新显示
 			}
-			if(Finalkey==12)	//确认
+			if(KeyNum==11)	//确认
 			{
-				if(Password==1234)	//如果密码等于正确密码
+				if(Password==2345)
 				{
-					LCD_ShowString(1,14,"OK ");	//显示OK
-					Password=0;		//密码清零
-					Count=0;		//计次清零
+					LCD_ShowString(1,14,"OK ");	
+					Password=0;	
+					Count=0;
 					LCD_ShowNum(2,1,Password,4);	//更新显示
 				}
-				else				//否则
+				else
 				{
-					LCD_ShowString(1,14,"ERR");	//显示ERR
-					Password=0;		//密码清零
-					Count=0;		//计次清零
+					LCD_ShowString(1,14,"ERR");	
+					Password=0;
+					Count=0;
 					LCD_ShowNum(2,1,Password,4);	//更新显示
 				}
 			}
-			if(Finalkey==11)	//按键按下，取消
+			if(KeyNum==12)	//取消
 			{
-				Password=0;		//密码清零
-				Count=0;		//计次清零
+				Password=0;
+				Count=0;
 				LCD_ShowNum(2,1,Password,4);	//更新显示
 			}
 		}
