@@ -1,7 +1,7 @@
 #include <REGX52.H>
 #include "Delay.h"
 #include "LCD1602.h"
-#include "MartrixKey.h"
+#include "MatrixKey.h"
 
 unsigned char KeyNum;
 void main()

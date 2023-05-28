@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   MAIN                                                                  05/28/2023 17:54:45 PAGE 1   
+C51 COMPILER V9.54   MAIN                                                                  05/28/2023 18:15:16 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
@@ -11,70 +11,71 @@ line level    source
    1          #include <REGX52.H>
    2          #include "Delay.h"
    3          #include "LCD1602.h"
-   4          #include "MartrixKey.h"
+   4          #include "MatrixKey.h"
    5          #include "Changenum.h"
    6          
-   7          unsigned char matrix,KeyNum,password;
-   8          int count;
-   9          void main()
-  10          {
-  11   1          LCD_Init;
-*** WARNING C275 IN LINE 11 OF main.c: expression with possibly no effect
-  12   1          LCD_ShowString(1,1,"PASSWORD");
-  13   1          while(1)
-  14   1          { int z;
-  15   2          //z=MatrixKey();
-  16   2              //KeyNum=Changenum(z);
-  17   2          KeyNum=MatrixKey;
-  18   2          if(KeyNum<=10)
+   7          unsigned char KeyNum,Finalkey;
+   8          unsigned int Password,Count;
+   9          
+  10          void main()
+  11          {
+  12   1        LCD_Init();
+  13   1        LCD_ShowString(1,1,"Password:");
+  14   1        while(1)
+  15   1        {
+  16   2          KeyNum=MatrixKey();
+  17   2          Finalkey=changenum(KeyNum);
+  18   2          if(Finalkey)
   19   2          {
-  20   3            if(count<4)
+  20   3            if(Finalkey<=10)  //按键按下，输入密码
   21   3            {
-  22   4              password*=10;
-  23   4              password+=KeyNum%10;
-  24   4              count++;
-  25   4            }
-  26   3            LCD_ShowNum(2,1,password,4);
-  27   3          }
-  28   2          if(KeyNum==11)
-  29   2          {
-  30   3            if(password==1234)
+  22   4              if(Count<4) //如果输入次数小于4
+  23   4              {
+  24   5                Password*=10;       //密码左移一位
+  25   5                Password+=Finalkey%10;    //获取一位密码
+  26   5                Count++;  //计次加一
+  27   5              }
+  28   4              LCD_ShowNum(2,1,Password,4);  //更新显示
+  29   4            }
+  30   3            if(Finalkey==12)  //确认
   31   3            {
-  32   4              LCD_ShowString(1,13,"OK ");
-  33   4              while(1);
-  34   4            }
-  35   3            else
-  36   3            {
-  37   4              LCD_ShowString(1,13,"ERR");
-  38   4              password=0;
-  39   4              count=0;
-  40   4              LCD_ShowNum(2,1,password,4);
-  41   4            }
-  42   3      
-  43   3          }
-  44   2          if(KeyNum==12)
-  45   2          {
-  46   3            password=0;
-  47   3            count=0;
-  48   3            LCD_ShowNum(2,1,password,4);
-  49   3          }
-  50   2          }
-  51   1      }
-*** WARNING C280 IN LINE 14 OF main.c: 'z': unreferenced local variable
-  52          
-C51 COMPILER V9.54   MAIN                                                                  05/28/2023 17:54:45 PAGE 2   
+  32   4              if(Password==1234)  //如果密码等于正确密码
+  33   4              {
+  34   5                LCD_ShowString(1,14,"OK "); //显示OK
+  35   5                Password=0;   //密码清零
+  36   5                Count=0;    //计次清零
+  37   5                LCD_ShowNum(2,1,Password,4);  //更新显示
+  38   5              }
+  39   4              else        //否则
+  40   4              {
+  41   5                LCD_ShowString(1,14,"ERR"); //显示ERR
+  42   5                Password=0;   //密码清零
+  43   5                Count=0;    //计次清零
+  44   5                LCD_ShowNum(2,1,Password,4);  //更新显示
+  45   5              }
+  46   4            }
+  47   3            if(Finalkey==11)  //按键按下，取消
+  48   3            {
+  49   4              Password=0;   //密码清零
+  50   4              Count=0;    //计次清零
+  51   4              LCD_ShowNum(2,1,Password,4);  //更新显示
+  52   4            }
+  53   3          }
+  54   2        }
+C51 COMPILER V9.54   MAIN                                                                  05/28/2023 18:15:16 PAGE 2   
 
+  55   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    177    ----
-   CONSTANT SIZE    =     17    ----
+   CODE SIZE        =    194    ----
+   CONSTANT SIZE    =     18    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      5       2
+   DATA SIZE        =      6    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

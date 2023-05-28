@@ -2,6 +2,6 @@
 ".\Objects\Changenum.obj",
 ".\Objects\Delay.obj",
 ".\Objects\LCD1602.obj",
-".\Objects\MartrixKey.obj" 
+".\Objects\MatrixKey.obj" 
 TO ".\Objects\Project" 
 PRINT(".\Listings\Project.m51") RAMSIZE(256) 

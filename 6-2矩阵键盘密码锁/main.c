@@ -1,52 +1,55 @@
 #include <REGX52.H>
 #include "Delay.h"
 #include "LCD1602.h"
-#include "MartrixKey.h"
+#include "MatrixKey.h"
 #include "Changenum.h"
 
-unsigned char matrix,KeyNum,password;
-int count;
+unsigned char KeyNum,Finalkey;
+unsigned int Password,Count;
+
 void main()
 {
-    LCD_Init;
-    LCD_ShowString(1,1,"PASSWORD");
-    while(1)
-    {	int z;
-		//z=MatrixKey();
-        //KeyNum=Changenum(z);
-		KeyNum=MatrixKey;
-		if(KeyNum<=10)
+	LCD_Init();
+	LCD_ShowString(1,1,"Password:");
+	while(1)
+	{
+		KeyNum=MatrixKey();
+		Finalkey=changenum(KeyNum);
+		if(Finalkey)
 		{
-			if(count<4)
+			if(Finalkey<=10)	//按键按下，输入密码
 			{
-				password*=10;
-				password+=KeyNum%10;
-				count++;
+				if(Count<4)	//如果输入次数小于4
+				{
+					Password*=10;				//密码左移一位
+					Password+=Finalkey%10;		//获取一位密码
+					Count++;	//计次加一
+				}
+				LCD_ShowNum(2,1,Password,4);	//更新显示
 			}
-			LCD_ShowNum(2,1,password,4);
-		}
-		if(KeyNum==11)
-		{
-			if(password==1234)
+			if(Finalkey==12)	//确认
 			{
-				LCD_ShowString(1,13,"OK ");
-				while(1);
+				if(Password==1234)	//如果密码等于正确密码
+				{
+					LCD_ShowString(1,14,"OK ");	//显示OK
+					Password=0;		//密码清零
+					Count=0;		//计次清零
+					LCD_ShowNum(2,1,Password,4);	//更新显示
+				}
+				else				//否则
+				{
+					LCD_ShowString(1,14,"ERR");	//显示ERR
+					Password=0;		//密码清零
+					Count=0;		//计次清零
+					LCD_ShowNum(2,1,Password,4);	//更新显示
+				}
 			}
-			else
+			if(Finalkey==11)	//按键按下，取消
 			{
-				LCD_ShowString(1,13,"ERR");
-				password=0;
-				count=0;
-				LCD_ShowNum(2,1,password,4);
+				Password=0;		//密码清零
+				Count=0;		//计次清零
+				LCD_ShowNum(2,1,Password,4);	//更新显示
 			}
-
 		}
-		if(KeyNum==12)
-		{
-			password=0;
-			count=0;
-			LCD_ShowNum(2,1,password,4);
-		}
-    }
+	}
 }
-
