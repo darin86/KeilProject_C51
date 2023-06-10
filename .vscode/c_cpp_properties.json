@@ -4,14 +4,14 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:\\software\\KeilC51\\C51\\INC/**"
+                "E:\\software\\Keil_C51\\C51\\INC/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:\\software\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "E:\\software\\mingw64\\bin\\gcc.exe",
             "cStandard": "c17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "windows-gcc-x64"
