@@ -1,10 +1,10 @@
-C51 COMPILER V9.54   MAIN                                                                  05/28/2023 18:53:32 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              07/11/2023 17:52:16 PAGE 1   
 
 
-C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\Objects\main.obj
-COMPILER INVOKED BY: D:\software\KeilC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
-                    -ings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+COMPILER INVOKED BY: E:\software\Keil_v5\Keil_C51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRI
+                    -NT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
 
 line level    source
 
@@ -23,46 +23,46 @@ line level    source
   13   1        LCD_ShowString(1,1,"Password:");
   14   1        while(1)
   15   1        {
-  16   2          KeyNum=changenum(MatrixKey());
+  16   2          KeyNum=changenum(MatrixKey());  //更改键盘布局后，9宫格
   17   2          //KeyNum=MatrixKey();
   18   2      
   19   2          if(KeyNum)
   20   2          {
-  21   3            if(KeyNum<=10)  //如果S1~S10按键按下，输入密码
+  21   3            if(KeyNum<=10)  //输入密码
   22   3            {
   23   4              if(Count<4) //如果输入次数小于4
   24   4              {
   25   5                Password*=10;       //密码左移一位
   26   5                Password+=KeyNum%10;    //获取一位密码
-  27   5                Count++;  //计次加一
+  27   5                Count++;
   28   5              }
   29   4              LCD_ShowNum(2,1,Password,4);  //更新显示
   30   4            }
-  31   3            if(KeyNum==11)  //如果S11按键按下，确认
+  31   3            if(KeyNum==11)  //确认
   32   3            {
-  33   4              if(Password==2345)  //如果密码等于正确密码
+  33   4              if(Password==2345)
   34   4              {
-  35   5                LCD_ShowString(1,14,"OK "); //显示OK
-  36   5                Password=0;   //密码清零
-  37   5                Count=0;    //计次清零
+  35   5                LCD_ShowString(1,14,"OK "); 
+  36   5                Password=0; 
+  37   5                Count=0;
   38   5                LCD_ShowNum(2,1,Password,4);  //更新显示
   39   5              }
-  40   4              else        //否则
+  40   4              else
   41   4              {
-  42   5                LCD_ShowString(1,14,"ERR"); //显示ERR
-  43   5                Password=0;   //密码清零
-  44   5                Count=0;    //计次清零
+  42   5                LCD_ShowString(1,14,"ERR"); 
+  43   5                Password=0;
+  44   5                Count=0;
   45   5                LCD_ShowNum(2,1,Password,4);  //更新显示
   46   5              }
   47   4            }
-  48   3            if(KeyNum==12)  //如果S12按键按下，取消
+  48   3            if(KeyNum==12)  //取消
   49   3            {
-  50   4              Password=0;   //密码清零
-  51   4              Count=0;    //计次清零
+  50   4              Password=0;
+  51   4              Count=0;
   52   4              LCD_ShowNum(2,1,Password,4);  //更新显示
   53   4            }
   54   3          }
-C51 COMPILER V9.54   MAIN                                                                  05/28/2023 18:53:32 PAGE 2   
+C51 COMPILER V9.60.7.0   MAIN                                                              07/11/2023 17:52:16 PAGE 2   
 
   55   2        }
   56   1      }

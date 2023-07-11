@@ -1,10 +1,10 @@
-C51 COMPILER V9.54   CHANGENUM                                                             05/28/2023 18:42:54 PAGE 1   
+C51 COMPILER V9.60.7.0   CHANGENUM                                                         07/11/2023 17:52:17 PAGE 1   
 
 
-C51 COMPILER V9.54, COMPILATION OF MODULE CHANGENUM
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE CHANGENUM
 OBJECT MODULE PLACED IN .\Objects\Changenum.obj
-COMPILER INVOKED BY: D:\software\KeilC51\C51\BIN\C51.EXE Changenum.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
-                    -\Listings\Changenum.lst) TABS(2) OBJECT(.\Objects\Changenum.obj)
+COMPILER INVOKED BY: E:\software\Keil_v5\Keil_C51\C51\BIN\C51.EXE Changenum.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEN
+                    -D PRINT(.\Listings\Changenum.lst) TABS(2) OBJECT(.\Objects\Changenum.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.54   CHANGENUM                                                             05/28/2023 18:42:54 PAGE 2   
+C51 COMPILER V9.60.7.0   CHANGENUM                                                         07/11/2023 17:52:17 PAGE 2   
 
 END OF MODULE INFORMATION.
 
