@@ -15,6 +15,8 @@ void UART_Init()		//4800bps@12.000MHz
 	TH1 = 0xF3;		//设定定时器重装值
 	ET1 = 0;		//禁止定时器1中断
 	TR1 = 1;		//启动定时器1
+	EA=1;
+	ES=1;
 }
 
 
@@ -31,3 +33,11 @@ void UART_SendByte(unsigned char Byte)
 	while (TI==0);
 	TI=0;
 }
+
+/*串口中断函数模版
+void UART_Rountine() interrupt 4
+{
+	
+	RI=0;
+}
+*/
