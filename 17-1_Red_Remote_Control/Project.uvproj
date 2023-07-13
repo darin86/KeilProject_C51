@@ -49,7 +49,7 @@
           <OutputName>Project</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -233,7 +233,7 @@
               <RCB>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x0</Size>
               </RCB>
               <RXB>
                 <Type>0</Type>
@@ -380,46 +380,6 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>Delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>Delay.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Delay.h</FilePath>
-            </File>
-            <File>
-              <FileName>Key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Key.c</FilePath>
-            </File>
-            <File>
-              <FileName>Key.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Key.h</FilePath>
-            </File>
-            <File>
-              <FileName>Timer0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Timer0.c</FilePath>
-            </File>
-            <File>
-              <FileName>Timer0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Timer0.h</FilePath>
-            </File>
-            <File>
-              <FileName>Nixie.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Nixie.h</FilePath>
-            </File>
-            <File>
-              <FileName>Nixie.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Nixie.c</FilePath>
             </File>
           </Files>
         </Group>
